@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello World - 闫森的个人博客</title>
+  <title>模式分解是否保持函数依赖的判断方法以及例子 - 闫森的个人博客</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
@@ -15,7 +15,7 @@
   
   <meta name="keywords" content="zhaoo, hexo-theme-zhaoo,"> 
   
-  <meta name="description" content="人工智能和大数据分析方向，热爱Windows客户端开发,Welcome to Hexo! This is yo..."> 
+  <meta name="description" content="人工智能和大数据分析方向，热爱Windows客户端开发,保持依赖的判断： 如果F上的每一个函数依赖都在其分解后..."> 
   
   <meta name="author" content="闫森"> 
 
@@ -143,30 +143,24 @@
   <section class="head">
   <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">Hello World</h1>
+    <h1 class="head-title">模式分解是否保持函数依赖的判断方法以及例子</h1>
     <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>2020-06-12</span
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>2020-06-24</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>434</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1273</span>
     </div>
   </div>
 </section>
   <section class="main">
     <section class="content">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span><br></code></pre></td></tr></table></figure>
+      <p>保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。 </p>
+<h2 id="对F上的每一个α→β使用下面的过程："><a href="#对F上的每一个α→β使用下面的过程：" class="headerlink" title="对F上的每一个α→β使用下面的过程："></a>对F上的每一个α→β使用下面的过程：</h2><p>result:=α;<br>while(result发生变化)do<br>for each 分解后的Ri<br>t=(result∩Ri)+ ∩Ri<br>result=result∪t</p>
+<h3 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">考虑关系模式R（A，B，C，D）分解｛R1（A，B），R2（BC），R3（C，D）｝，<br>函数依赖集F=｛A→B，B→C，C→D，D→A&#125;显然，AB包含于R1，BC包含于R2，CD包含于R3。<br>因此，只需要验证是否有D→A呗分解p所保持。为此，我们使用算法。首先，result=｛D｝进入 repeat循环，<br>当i=1时不改变，因为｛D｝U（（｛D｝∩｛A，B｝）+∩｛A，B｝）仍是｛D｝。同样方法，当i=2时Z不变。<br>然而，i=3时，我们得到result=｛D｝U（（｛D｝∩&#123;C，D｝）+∩&#123;C,D｝=｛D｝U（｛D｝+∩｛C，D｝)=｛D｝U（｛A，B，C，D｝∩｛C，D｝）=｛C，D&#125;再次执行 repeat的循环体，<br>当i=2时产生result=｛B，C，D｝而第三遍，当i=1时置result为｛A，B，C，D｝。<br>此后，T不再改变。这样，result=｛A，B，C，D&#125;它包含A，因此，D→A被分解所保持。从而是保持函数依赖的分解。<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">已知R&lt;U,F&gt;，U=&#123;A,B,C,D,E&#125;，F=&#123;A→C,B→C,C→D,DE→C,CE→A&#125;，<br>R的一个分解为R1(AD)，R2(AB)，R3(BE)，R4(CDE)，R5(AE)，判断这个分解是否具有函数依赖性。<br>先看F中每一个函数依赖，R4有C-&gt;D,DE-&gt;C。A-&gt;C,B-&gt;C,CE-&gt;A。这三个函数依赖分解模式里均未能覆盖。<br>开始使用算法进行检测：<br>首先对于A-&gt;C，result = A，（A）+ = ACD ，T=AD，result=AD，result改变，进入下一个循环：<br>result = AD,（ABD）+ = ABCD ，t=AB，result=ABD。<br>result改变：result = ABD, （ABD）+ = ABCDE, t=BE，result=ABDE。<br>result改变：result = ABDE，（ABCD）+=ABCDE，t=CDE，result=ABCDE。<br>result改变：（从这一步就能看出来，保持了函数依赖了，因为已经包含C了）result = ABCDE，（ABCDE）+=ABCDE,t=AE，result=ABCDE。<br>result未改变。退出循环。、由于result=ABCDE，包含了C，所以分解保持函数依赖。<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>More info: <a href="https://blog.csdn.net/qq_35293120?t=1" target="_blank" rel="noopener">见我CSDN博客</a></p>
 
     </section>
     <section class="extra">
@@ -185,8 +179,8 @@
       
 <nav class="nav">
   
-    <a href="/2020/06/24/paper1/"><i class="iconfont iconleft"></i>模式分解是否保持函数依赖的判断方法以及例子</a>
   
+    <a href="/2020/06/12/hello-world/">Hello World<i class="iconfont iconright"></i></a>
   
 </nav>
 
