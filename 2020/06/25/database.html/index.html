@@ -12,15 +12,15 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。  对F上的每一个α→β使用下面的过程：result:&#x3D;α;while(result发生变化)dofor each 分解后的Rit&#x3D;(result∩Ri)+ ∩Riresult&#x3D;r">
+  <meta name="description" content="保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模式分解是否保持函数依赖的判断方法以及例子">
-<meta property="og:url" content="http://yoursite.com/2020/06/24/paper1/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/06/25/database.html/index.html">
 <meta property="og:site_name" content="闫森的个人博客">
-<meta property="og:description" content="保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。  对F上的每一个α→β使用下面的过程：result:&#x3D;α;while(result发生变化)dofor each 分解后的Rit&#x3D;(result∩Ri)+ ∩Riresult&#x3D;r">
+<meta property="og:description" content="保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-24T14:23:16.638Z">
-<meta property="article:modified_time" content="2020-06-24T14:39:28.165Z">
+<meta property="article:published_time" content="2020-06-24T16:46:25.000Z">
+<meta property="article:modified_time" content="2020-06-24T16:41:23.108Z">
 <meta property="article:author" content="闫森">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="Python">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1593014260564">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1593017947821">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -53,9 +53,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>2</div>
+        <div><span>文章</span>1</div>
         <div><span>标签</span>0</div>
-        <div><span>分类</span>0</div>
+        <div><span>分类</span>1</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -103,6 +103,30 @@
 </div>
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/数据库/">数据库</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
 
   
   
@@ -127,54 +151,77 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <div class="nexmoe-post">
-  
-      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="模式分解是否保持函数依赖的判断方法以及例子" class="lazyload">
-          <h1>模式分解是否保持函数依赖的判断方法以及例子</h1>
-      </div>
-  
-  
-  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年06月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>597 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-</div>
+        <style>
+  article > *:first-child {
+    margin-top: 0!important;
+  }
+  article ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -5px;
+  }
+  article ul li {
+    transition: all .03s;
+    width: calc(12.5% - 10px);
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    font-size: 0;
+    overflow: hidden;
+  }
+  article ul li > a::after {
+    font-size: 13px;
+    color: #606266;
+    -webkit-transition: none;
+    transition: none;
+    content: attr(title);
+    display: block;
+    position: relative;
+    width: 100%;
+    border: none;
+    padding: 3px 10px 5px 10px;
+    margin-top: -2px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  article ul li img {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    display: block;
+  }
+  article ul li img.lazyload {
+    padding-bottom: 100%;
+    opacity: 0;
+  }
+  article ul li img.lazyloaded {
+    padding-bottom: 0;
+    opacity: 1;
+  }
+  @media screen and (max-width: 768px) {
+    article ul li {
+      width: calc(33.3333333333% - 10px);
+    }
+}
+</style>
 
-  <div class="nexmoe-post-right">
-    
-  </div>
-
-  <article>
+<div class="nexmoe-post">
+  <article class="nexmoe-py">
     <p>保持依赖的判断： 如果F上的每一个函数依赖都在其分解后的某一个关系上成立，则这个分解是保持依赖的（充分条件）。 如果上述判断失败，并不能断言分解不是保持依赖的，因为上面只是充分条件，还要使用下面的通用方法来做进一步判断。 </p>
-<h2 id="对F上的每一个α→β使用下面的过程："><a href="#对F上的每一个α→β使用下面的过程：" class="headerlink" title="对F上的每一个α→β使用下面的过程："></a>对F上的每一个α→β使用下面的过程：</h2><p>result:=α;<br>while(result发生变化)do<br>for each 分解后的Ri<br>t=(result∩Ri)+ ∩Ri<br>result=result∪t</p>
-<h3 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">考虑关系模式R（A，B，C，D）分解｛R1（A，B），R2（BC），R3（C，D）｝，<br>函数依赖集F=｛A→B，B→C，C→D，D→A&#125;显然，AB包含于R1，BC包含于R2，CD包含于R3。<br>因此，只需要验证是否有D→A呗分解p所保持。为此，我们使用算法。首先，result=｛D｝进入 repeat循环，<br>当i=1时不改变，因为｛D｝U（（｛D｝∩｛A，B｝）+∩｛A，B｝）仍是｛D｝。同样方法，当i=2时Z不变。<br>然而，i=3时，我们得到result=｛D｝U（（｛D｝∩&#123;C，D｝）+∩&#123;C,D｝=｛D｝U（｛D｝+∩｛C，D｝)=｛D｝U（｛A，B，C，D｝∩｛C，D｝）=｛C，D&#125;再次执行 repeat的循环体，<br>当i=2时产生result=｛B，C，D｝而第三遍，当i=1时置result为｛A，B，C，D｝。<br>此后，T不再改变。这样，result=｛A，B，C，D&#125;它包含A，因此，D→A被分解所保持。从而是保持函数依赖的分解。<br></code></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="对F上的每一个α→β使用下面的过程："><a href="#对F上的每一个α→β使用下面的过程：" class="headerlink" title="对F上的每一个α→β使用下面的过程："></a>对F上的每一个α→β使用下面的过程：</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-built_in">result</span>:=α; <br><span class="hljs-keyword">while</span>(<span class="hljs-built_in">result</span>发生变化)<span class="hljs-built_in">do</span> <br><span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> 分解后的Ri <br>t=(<span class="hljs-built_in">result</span>∩Ri)+ ∩Ri <br><span class="hljs-built_in">result</span>=<span class="hljs-built_in">result</span>∪t<br></code></pre></td></tr></table></figure>
 
-<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">已知R&lt;U,F&gt;，U=&#123;A,B,C,D,E&#125;，F=&#123;A→C,B→C,C→D,DE→C,CE→A&#125;，<br>R的一个分解为R1(AD)，R2(AB)，R3(BE)，R4(CDE)，R5(AE)，判断这个分解是否具有函数依赖性。<br>先看F中每一个函数依赖，R4有C-&gt;D,DE-&gt;C。A-&gt;C,B-&gt;C,CE-&gt;A。这三个函数依赖分解模式里均未能覆盖。<br>开始使用算法进行检测：<br>首先对于A-&gt;C，result = A，（A）+ = ACD ，T=AD，result=AD，result改变，进入下一个循环：<br>result = AD,（ABD）+ = ABCD ，t=AB，result=ABD。<br>result改变：result = ABD, （ABD）+ = ABCDE, t=BE，result=ABDE。<br>result改变：result = ABDE，（ABCD）+=ABCDE，t=CDE，result=ABCDE。<br>result改变：（从这一步就能看出来，保持了函数依赖了，因为已经包含C了）result = ABCDE，（ABCDE）+=ABCDE,t=AE，result=ABCDE。<br>result未改变。退出循环。、由于result=ABCDE，包含了C，所以分解保持函数依赖。<br></code></pre></td></tr></table></figure>
-
+<h3 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h3><p>考虑关系模式R（A，B，C，D）分解｛R1（A，B），R2（BC），R3（C，D）｝，<br>函数依赖集F=｛A→B，B→C，C→D，D→A}显然，AB包含于R1，BC包含于R2，CD包含于R3。<br>因此，只需要验证是否有D→A呗分解p所保持。为此，我们使用算法。首先，result=｛D｝进入 repeat循环，<br>当i=1时不改变，因为｛D｝U（（｛D｝∩｛A，B｝）+∩｛A，B｝）仍是｛D｝。同样方法，当i=2时Z不变。<br>然而，i=3时，我们得到result=｛D｝U（（｛D｝∩{C，D｝）+∩{C,D｝=｛D｝U（｛D｝+∩｛C，D｝)=｛D｝U（｛A，B，C，D｝∩｛C，D｝）=｛C，D}再次执行 repeat的循环体，<br>当i=2时产生result=｛B，C，D｝而第三遍，当i=1时置result为｛A，B，C，D｝。<br>此后，T不再改变。这样，result=｛A，B，C，D}它包含A，因此，D→A被分解所保持。从而是保持函数依赖的分解。</p>
+<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><p>已知R&lt;U,F&gt;，U={A,B,C,D,E}，F={A→C,B→C,C→D,DE→C,CE→A}，<br>R的一个分解为R1(AD)，R2(AB)，R3(BE)，R4(CDE)，R5(AE)，判断这个分解是否具有函数依赖性。<br>先看F中每一个函数依赖，R4有C-&gt;D,DE-&gt;C。A-&gt;C,B-&gt;C,CE-&gt;A。这三个函数依赖分解模式里均未能覆盖。<br>开始使用算法进行检测：<br>首先对于A-&gt;C，result = A，（A）+ = ACD ，T=AD，result=AD，result改变，进入下一个循环：<br>result = AD,（ABD）+ = ABCD ，t=AB，result=ABD。<br>result改变：result = ABD, （ABD）+ = ABCDE, t=BE，result=ABDE。<br>result改变：result = ABDE，（ABCD）+=ABCDE，t=CDE，result=ABCDE。<br>result改变：（从这一步就能看出来，保持了函数依赖了，因为已经包含C了）result = ABCDE，（ABCDE）+=ABCDE,t=AE，result=ABCDE。<br>result未改变。退出循环。、由于result=ABCDE，包含了C，所以分解保持函数依赖。</p>
 <p>More info: <a href="https://blog.csdn.net/qq_35293120?t=1" target="_blank" rel="noopener">见我CSDN博客</a></p>
 
   </article>
-
-  <div class="nexmoe-post-meta nexmoe-rainbow">
-    
-    
-</div>
-
-  <div class="nexmoe-post-footer">
-    
-      
-  <div class="nexmoe-post-copyright">
-    <strong>本文作者：</strong>闫森<br>
-    <strong>本文链接：</strong><a href="http://yoursite.com/2020/06/24/paper1/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;24&#x2F;paper1&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;24&#x2F;paper1&#x2F;</a><br>
-    
-      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-    
-  </div>
-
-
-    
-    <section class="nexmoe-comment">
+  <section class="nexmoe-comment">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
 <div id="gitalk"></div>
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
@@ -190,8 +237,8 @@
     gitalk.render('gitalk')
 </script>
 </section>
-  </div>
 </div>
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
@@ -201,7 +248,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1593014260567"></script>
+<script src="/js/app.js?v=1593017947822"></script>
   
 
 
